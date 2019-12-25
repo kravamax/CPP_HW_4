@@ -65,7 +65,7 @@ int main() {
 	//==================================================================================================================================================
 	//Task3. The user enters a number. If it is even, multiply it by 3, else divide by 2.
 	//Result display on the monitor.
-	float number;
+	/*float number;
 	
 	cout << "Enter the number: ";
 	cin >> number;
@@ -74,8 +74,48 @@ int main() {
 	else if ((int)number % 2 == 0) { number *= 3; }
 	else {number /= 2; }
 
-	if(number) { cout << "Result: " << number; }
+	if(number) { cout << "Result: " << number; }*/
 	
+	//==================================================================================================================================================
+	//Task4. Write a calculator program. The user enters two numbers and select an arithmetic action.
+	//display the result.
+
+	float num1, num2;
+	int key;
+
+	cout << "Enter two numbers: \n";
+	cin >> num1 >> num2;
+
+	cout << "\nEnter the number for arithmetic action." << endl;
+	cout << "1 --- '+'" << endl;
+	cout << "2 --- '-'" << endl;
+	cout << "3 --- '*'" << endl;
+	cout << "4 --- '/'" << endl;
+	cout << "5 --- '^'\n\n";
+	cin >> key;
+
+	switch (key)
+	{
+	case 1:
+		cout << num1 << " + " << num2 << " = "<<num1 + num2;
+		break;
+	case 2:
+		cout << num1 << " - " << num2 << " = " << num1 - num2;
+		break;
+	case 3:
+		cout << num1 << " * " << num2 << " = " << num1 * num2;
+		break;
+	case 4:
+		cout << num1 << " / " << num2 << " = " << num1 / num2;
+		break;
+	case 5:
+		cout << num1 << " ^ " << num2 << " = " << pow(num1, num2);
+		break;
+	default:
+		cout << "\nYou enter wrong character!";
+		break;
+	}
+
 
 	cout<<("\n\n");
 	system("pause");
