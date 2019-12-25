@@ -45,7 +45,7 @@ int main() {
 
 	//==================================================================================================================================================
 	//Task2. The user enter a character. Determine what's the symbol: letter, digit, coma or other.
-	char key;
+	/*char key;
 	cout << "Enter a character: ";
 	cin >> key;
 
@@ -60,10 +60,22 @@ int main() {
 	}
 	else {
 		cout << "This is other character.";
-	}
+	}*/
 
+	//==================================================================================================================================================
+	//Task3. The user enters a number. If it is even, multiply it by 3, else divide by 2.
+	//Result display on the monitor.
+	float number;
+	
+	cout << "Enter the number: ";
+	cin >> number;
 
+	if (number == 0) { cout << "You enter zero!\n"; }
+	else if ((int)number % 2 == 0) { number *= 3; }
+	else {number /= 2; }
 
+	if(number) { cout << "Result: " << number; }
+	
 
 	cout<<("\n\n");
 	system("pause");
