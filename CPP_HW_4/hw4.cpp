@@ -80,7 +80,7 @@ int main() {
 	//Task4. Write a calculator program. The user enters two numbers and select an arithmetic action.
 	//display the result.
 
-	float num1, num2;
+	/*float num1, num2;
 	int key;
 
 	cout << "Enter two numbers: \n";
@@ -114,7 +114,75 @@ int main() {
 	default:
 		cout << "\nYou enter wrong character!";
 		break;
+	}*/
+
+	//==================================================================================================================================================
+	//Task5.
+	/*the plane must fly with cargo
+	from point A to point C through point B.Tank capacity for
+	fuel in an airplane - 300 liters.Fuel consumption
+	per 1 km depending on the weight of the cargo on the aircraft, the following :
+	¦ up to 500 kg - 1 liter / km;
+	¦ up to 1000 kg - 4 liters / km;
+	¦ up to 1500 kg - 7 liters / km;
+	¦ up to 2000 kg - 9 liters / km;
+	¦ more than 2000 kg - the plane does not lift.
+	User enters distance between points
+	A and B, and the distance between points Band C, as well as the weight
+	cargo.The program should calculate what is the minimum
+	the amount of fuel needed to refuel the aircraft
+	in point B, to fly from point A to point C.If it is impossible to overcome any of the distances -
+	the program should display an impossibility message
+	flight on the entered route.*/
+	
+	int tank_capacity, distance_ab, distance_bc, fuel_spent, mass, consumption;
+	
+	tank_capacity = 300;
+	
+	cout << "Enter distance from point A to B (in km): " << endl;
+	cin >> distance_ab;
+
+	cout << "Enter distance from point B to C (in km): " << endl;
+	cin >> distance_bc;
+
+	cout << "Enter the cargo weight (in kg): " << endl;
+	cin >> mass;
+
+	if (mass < 500 && distance_ab < 300 && distance_bc < 300) {
+		consumption = 1;
 	}
+	else if (mass >= 500 && mass < 1000 && distance_ab < 75 && distance_bc < 75) {
+		consumption = 4;
+	}
+	else if (mass >= 1000 && mass < 1500 && distance_ab < 42 && distance_bc < 42) {
+		consumption = 7;
+	}
+	else if (mass >= 1500 && mass < 2000 && distance_ab < 33 && distance_bc < 33) {
+		consumption = 9;
+	}
+	else {
+		cout << "A plane cannot fly with these parameters";
+		consumption = 0;
+	}
+
+	fuel_spent = (tank_capacity - distance_ab * consumption) - (distance_bc * consumption);
+	
+	if (fuel_spent < 0 && consumption != 0) {
+		fuel_spent *= -1;
+		cout << "The plane need refuel " << fuel_spent << " extra litters in point B to reach point C.";
+	}
+	else if (fuel_spent > 0 && consumption != 0) {
+		cout << "You don't need refueling.";
+	}
+
+	//==================================================================================================================================================
+	//Task6. 
+
+ 
+
+
+
+
 
 
 	cout<<("\n\n");
