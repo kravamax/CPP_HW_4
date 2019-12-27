@@ -135,7 +135,7 @@ int main() {
 	the program should display an impossibility message
 	flight on the entered route.*/
 	
-	int tank_capacity, distance_ab, distance_bc, fuel_spent, mass, consumption;
+	/*int tank_capacity, distance_ab, distance_bc, fuel_spent, mass, consumption;
 	
 	tank_capacity = 300;
 	
@@ -169,20 +169,116 @@ int main() {
 	
 	if (fuel_spent < 0 && consumption != 0) {
 		fuel_spent *= -1;
-		cout << "The plane need refuel " << fuel_spent << " extra litters in point B to reach point C.";
+		cout << "The plane need refuel minimum " << fuel_spent << " extra litters in point B to reach point C.";
 	}
 	else if (fuel_spent > 0 && consumption != 0) {
 		cout << "You don't need refueling.";
-	}
+	}*/
 
 	//==================================================================================================================================================
-	//Task6. 
+	//Task6. The program calculates the cost of a call for different mobile operators.
+	//User enters the cost of the conversationand chooses from which to which
+	//the operator he is calling.Display the cost on the screen.
 
- 
+	int first_operator, last_operator, minuts, sec;
+	float operator_cost, call_cost;
+
+	cout << "Enter the code of your operator: ";
+	cin >> first_operator;
+
+	switch (first_operator)
+	{
+		case 96: first_operator = 1; break;
+		case 97: first_operator = 1; break;
+		case 98: first_operator = 1; break;
+		case 67: first_operator = 1; break;
+		case 68: first_operator = 1; break;
+		
+		
+		case 50: first_operator = 2; break;
+		case 66: first_operator = 2; break;
+		case 95: first_operator = 2; break;
+		case 99: first_operator = 2; break;
+		
+		case 93: first_operator = 3; break;
+		case 63: first_operator = 3; break;
+		case 73: first_operator = 3; break;
+
+		default: first_operator = 0; break;
+	}
+
+	cout << "Enter the code of the outgoing operator: ";
+	cin >> last_operator;
+	
+	switch (last_operator)
+	{
+		case 96: last_operator = 1; break;
+		case 97: last_operator = 1; break;
+		case 98: last_operator = 1; break;
+		case 67: last_operator = 1; break;
+		case 68: last_operator = 1; break;
 
 
+		case 50: last_operator = 2; break;
+		case 66: last_operator = 2; break;
+		case 95: last_operator = 2; break;
+		case 99: last_operator = 2; break;
 
+		case 93: last_operator = 3; break;
+		case 63: last_operator = 3; break;
+		case 73: last_operator = 3; break;
 
+		default: last_operator = 0; break;
+	}
+	
+	if (first_operator == last_operator) {
+		cout << "Enter the cost of a call on your network: ";
+	}
+	else {
+		cout << "Enter the cost of a call on other network: ";
+	}
+	cin >> operator_cost;
+
+	cout << "Enter call duration (min sec): ";
+	cin >> minuts >> sec;
+	if (sec > 0) {
+		++minuts;
+	}
+
+	call_cost = minuts * operator_cost;
+
+	cout << "\n\n";
+	if (first_operator == 1) {
+		cout << "Your operator is Kyivstar."<<endl;
+	}
+	else if (first_operator == 2) {
+		cout << "Your operator is Vodafone." << endl;
+	}
+	else if (first_operator == 3) {
+		cout << "Your operator is Lifecell." << endl;
+	}
+	else {
+		cout << "Your operator is Unknown." << endl;
+	}
+
+	if (last_operator == 1) {
+		cout << "Your operator is Kyivstar." << endl;
+	}
+	else if (last_operator == 2) {
+		cout << "Your operator is Vodafone." << endl;
+	}
+	else if (last_operator == 3) {
+		cout << "Your operator is Lifecell." << endl;
+	}
+	else {
+		cout << "Your operator is Unknown." << endl;
+	}
+
+	if (sec > 0) {
+		--minuts;
+	}
+	cout << "The price for " << minuts << " minuts and " << sec;
+	cout << " seconds was " << (int)call_cost << "$ and " << (call_cost - (int)call_cost)*100 << " cents.";
 
 
 	cout<<("\n\n");
